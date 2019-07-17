@@ -1,4 +1,4 @@
-function(){
+(function(){
 
 	const qtils = {
 
@@ -35,4 +35,4 @@ function(){
         
     };
 
-}();
+})();
