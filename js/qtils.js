@@ -40,7 +40,7 @@
       inputs.forEach(
         d => {
           d.onchange = () => {
-            let selected_choice = get_selected_choice(question_object);
+            let selected_choice = utils.get_selected_choice(question_object);
             utils.set_embedded_data(key, selected_choice);
 	  }
         }
