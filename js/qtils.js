@@ -21,14 +21,31 @@
 
       return res;
     },
+
+    get_selected_choice : function(question_object) {
+      let response_value = question_object.question.runtime.Selected();
+      let response_text = question_object.question.runtime.Choices[response_value].Display;
+
+      return response_text;
+    }
     
 
   }
 
   const helpers = {
 
-    // get the id of the survey being submitted
-    
+    // capture question response in embedded variable
+    embed_single_answer_question_response : function(question_object, key) {
+      let inputs = utils.query_in_question(question_object, "input");
+      inputs.forEach(
+        d => {
+          d.onchange = () => {
+            let selected_choice = get_selected_choice(question_object);
+            utils.set_embedded_data(key, selected_choice);
+	  }
+        }
+      )
+    }
 
   }
 
@@ -75,6 +92,7 @@
     },
 
     utils : utils,
+    helpers : helpers,
     Q : Q,
 
   };
