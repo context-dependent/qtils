@@ -37,14 +37,15 @@
     // capture question response in embedded variable
     embed_single_answer_question_response : function(question_object, key) {
       let inputs = utils.query_in_question(question_object, "input");
+
       inputs.forEach(
-        d => {
+        (d, i) => {
           d.onchange = () => {
             let selected_choice = utils.get_selected_choice(question_object);
             utils.set_embedded_data(key, selected_choice);
 	  }
         }
-      )
+      );
     }
 
   }
