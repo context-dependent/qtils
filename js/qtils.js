@@ -23,7 +23,7 @@
     },
 
     get_selected_choice : function(question_object) {
-      let response_value = question_object.question.runtime.Selected();
+      let response_value = question_object.question.runtime.Selected;
       let response_text = question_object.question.runtime.Choices[response_value].Display;
 
       return response_text;
