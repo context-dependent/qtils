@@ -23,8 +23,10 @@
     },
 
     get_selected_choice : function(question_object) {
-      let response_value = question_object.question.runtime.Selected;
-      let response_text = question_object.question.runtime.Choices[response_value].Display;
+      let response_value, response_text;
+      
+      response_value = question_object.question.runtime.Selected;
+      response_text = question_object.question.runtime.Choices[response_value].Display;
 
       return response_text;
     }
@@ -43,7 +45,7 @@
           d.onchange = () => {
             let selected_choice = utils.get_selected_choice(question_object);
             utils.set_embedded_data(key, selected_choice);
-	  }
+	        }
         }
       );
     }
@@ -90,8 +92,8 @@
             }
           });
         });
-    },
-
+    }, 
+    
     utils : utils,
     helpers : helpers,
     Q : Q,

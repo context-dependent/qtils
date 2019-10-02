@@ -1,0 +1,17 @@
+{
+  "Alberta" : [
+    "Alberta Works",
+    "Assured Income for the Severely Handicapped"
+  ],
+
+  "British Columbia" : [
+    "Income Assistance",
+    "Disability Assistance"
+  ],
+
+  "Ontario" : [
+    "Ontario Works",
+    "Ontario Disability Support Program"
+  ]
+
+}
