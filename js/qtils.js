@@ -23,34 +23,39 @@
     },
 
     get_selected_choice : function(question_object) {
-      let response_value, response_text;
+
+      let response_value, response_text, question_id, question_info;
       
-      response_value = question_object.question.runtime.Selected;
-      response_text = question_object.question.runtime.Choices[response_value].Display;
+      question_id = question_object.questionId;
+      question_info = Qualtrics.SurveyEngine.QuestionInfo[question_id];
+      response_value = question_object.getSelectedChoices();
+      response_text = question_info.Choices[+response_value[0]].Text;
 
       return response_text;
     }
     
 
-  }
+  };
 
   const helpers = {
 
     // capture question response in embedded variable
     embed_single_answer_question_response : function(question_object, key) {
       let inputs = utils.query_in_question(question_object, "input");
-
+      
+      
       inputs.forEach(
         (d, i) => {
           d.onchange = () => {
             let selected_choice = utils.get_selected_choice(question_object);
+            console.log("embedding " + selected_choice + " as " + key);
             utils.set_embedded_data(key, selected_choice);
-	        }
+	        };
         }
       );
     }
 
-  }
+  };
 
   const qtils = {
 
