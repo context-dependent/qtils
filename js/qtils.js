@@ -41,7 +41,7 @@
 
     // capture question response in embedded variable
     embed_single_answer_question_response : function(question_object, key) {
-      let inputs = utils.query_in_question(question_object, "input");
+      let inputs = utils.query_in_question(question_object, "input, select");
       
       
       inputs.forEach(
