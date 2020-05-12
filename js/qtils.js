@@ -71,7 +71,7 @@
             }, 
             container: function() {
               
-              var question_container = document.getElementById(question_id); 
+              var choice_container = document.getElementById(question_id).querySelectorAll(".ChoiceStructure")[0]; 
               var awesomplete_div = document.createElement("div");
               
               awesomplete_div.addClassName("awesomplete");
@@ -80,7 +80,7 @@
               awesomplete_div.style.position = "absolute";
               awesomplete_div.style.width = "85%";
               
-              question_container.appendChild(awesomplete_div);
+              choice_container.appendChild(awesomplete_div);
               
               
               
