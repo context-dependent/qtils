@@ -72,15 +72,17 @@
             container: function() {
               
               var choice_container = document.getElementById(question_id).querySelectorAll(".ChoiceStructure")[0]; 
+	      var question_body = document.getElementById(question_id).querySelector(".QuestionBody");
               var awesomplete_div = document.createElement("div");
               
               awesomplete_div.addClassName("awesomplete");
               awesomplete_div.id = question_id + "-awesomplete";
               awesomplete_div.style.marginLeft = "5%";
               awesomplete_div.style.position = "absolute";
-              awesomplete_div.style.width = "85%";
+              awesomplete_div.style.width = "100%";
               
               choice_container.appendChild(awesomplete_div);
+	      question_body.style.overflow = "visible";
               
               
               
