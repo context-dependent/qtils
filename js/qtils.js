@@ -97,6 +97,7 @@
     helpers : helpers,
     Q : Q,
 
+	  
   };
 
   if (window) {
