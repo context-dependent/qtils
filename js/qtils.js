@@ -77,7 +77,6 @@
               
               awesomplete_div.addClassName("awesomplete");
               awesomplete_div.id = question_id + "-awesomplete";
-              awesomplete_div.style.marginLeft = "5%";
               awesomplete_div.style.position = "absolute";
               awesomplete_div.style.width = "100%";
               
